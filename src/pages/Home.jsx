@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import Navigation from '../components/Navigation';
 
-import { PokemonProvider } from '../context/PokemonProvider';
-import FilterBar from '../components/FilterBar';
-import { CardPokemon } from '../components/CardPokemon';
-import DetailPokemon from './../components/DetailPokemon';
+import { PokemonProvider }  from '../context/PokemonProvider';
+import FilterBar  from '../components/FilterBar';
+import  CardPokemon  from '../components/CardPokemon';
+import  DetailPokemon  from '../components/DetailPokemon';
 
 
 const images = [
@@ -44,9 +44,9 @@ const Home = () => {
   return (
     <>
       <PokemonProvider>
-        <div className="relative" style={backgroundImageStyle}>
+        <div className="relative " style={backgroundImageStyle}>
           <FilterBar />
-          <div className=" p-6  mx-auto bg-[#53535398]">
+          <div className=" mx-auto bg-[#53535398]">
             <Navigation />
             <CardPokemon />
           </div>
