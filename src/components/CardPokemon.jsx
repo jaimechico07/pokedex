@@ -23,25 +23,25 @@ const CardPokemon = () => {
       {loading ? (
         <Loaders />
       ) : (
-        <div className="max-w-7xl mx-auto h-screen">
-          <div className="custom-scroll-container my-8">
-            <div className="custom-scroll-content h-full grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] place-content-start justify-items-center gap-6">
+        <div className="p-4 mx-auto max-w-7xl">
+          <div className="my-8 custom-scroll-container">
+            <div className="custom-scroll-content grid h-full grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] place-content-start justify-items-center gap-6">
               {pokemonList?.map(pokemon => (
                 <div
                   key={pokemon.id}
-                  className={`rounded-2xl card h-max  bg-black/50 relative p-6 border-2 border-transparent transition duration-[0.5s] ease-out  `}
+                  className={`card relative h-max  rounded-2xl border-2 border-transparent bg-black/50 p-6 transition duration-[0.5s] ease-out  `}
                 >
-                  <div className="h-auto  gap-2 grid place-content-center ">
+                  <div className="grid h-auto gap-2 place-content-center ">
                     <div className="h-auto">
                       <img
                         src={pokemon.sprites.other.dream_world.front_default}
                         alt={`Pokemon ${pokemon.name}`}
-                        className="w-44 h-44"
+                        className="h-44 w-44"
                       />
                     </div>
                     <div className="flex flex-col gap-4">
-                      <span className="absolute right-0 top-0 font-lexend-deca text-primary-timberwolf text-3xl mt-2 mr-2"></span>
-                      <h3 className="text-center first-letter:uppercase text-2xl font-arima font-semibold text-white">
+                      <span className="absolute top-0 right-0 mt-2 mr-2 text-3xl font-lexend-deca text-primary-timberwolf"></span>
+                      <h3 className="text-2xl font-semibold text-center text-white font-arima first-letter:uppercase">
                         {pokemon.name.split('-')[0]}
                       </h3>
                       <div className="flex flex-wrap justify-center gap-4">
@@ -52,9 +52,9 @@ const CardPokemon = () => {
                               alt={type.type.name}
                               width={200}
                               height={200}
-                              className="h-10 w-10 cursor-pointer"
+                              className="w-10 h-10 cursor-pointer"
                             />
-                            <span className={` text-white font-lexend-deca ${type.type.name}`}>
+                            <span className={` font-lexend-deca text-white ${type.type.name}`}>
                               {type.type.name.toUpperCase()}
                             </span>
                           </div>
@@ -64,7 +64,7 @@ const CardPokemon = () => {
                   </div>
                   <button
                     onClick={() => handleMoreInfo(pokemon)}
-                    className="w-[60%] card-button rounded-2xl  border-none bg-[#008bf8] text-white text-2xl absolute left-1/2 bottom-0 opacity-0 transition ease-out duration-[0.5s] overflow-hidden "
+                    className="card-button absolute bottom-0 left-1/2 w-[60%] overflow-hidden rounded-2xl border-none bg-[#008bf8] text-2xl text-white opacity-0 transition duration-[0.5s] ease-out "
                   >
                     More info
                   </button>
